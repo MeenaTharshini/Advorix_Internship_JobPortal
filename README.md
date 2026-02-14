@@ -120,7 +120,7 @@ JobPortal
 │   │   ├── App.js
 │   │   └── index.js
 │   ├── package.json
-│   └── .gitignore
+└── .gitignore
 │
 └── README.md
 ```
