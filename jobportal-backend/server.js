@@ -28,10 +28,14 @@ const applicationRoutes = require('./routes/applicationRoutes');
 app.use('/api/applications', applicationRoutes);
 
 // ✅ Serve React frontend
-app.use(express.static(path.join(__dirname, "build")));
+const buildPath = path.join(__dirname, "build");
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+app.use(express.static(buildPath));
+
+app.get("/*", (req, res) => {
+  if (!req.path.startsWith("/api")) {
+    res.sendFile(path.join(buildPath, "index.html"));
+  }
 });
 
 // ✅ Connect MongoDB THEN start server
