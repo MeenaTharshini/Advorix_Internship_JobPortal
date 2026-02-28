@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Applications.css";
-
+import axios from "axios";
 export default function Applications() {
   const [apps, setApps] = useState([]);
   const navigate = useNavigate();
@@ -14,11 +14,10 @@ export default function Applications() {
       return;
     }
 
-    fetch(`http://localhost:5000/api/applications/recruiter/${user._id}`)
-      .then(res => res.json())
-      .then(data => setApps(data))
-      .catch(err => console.error("Error fetching applications:", err));
-
+    axios
+  .get(`https://smis-jobportal-backend.onrender.com/api/applications/recruiter/${user._id}`)
+  .then(res => setApps(res.data))
+  .catch(err => console.error("Error fetching applications:", err));
   }, [navigate, user]);
 
   if (!user) return null;

@@ -28,7 +28,7 @@ export default function RecruiterDashboard() {
     const fetchJobs = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/jobs/recruiter/${user._id}`,
+          `https://smis-jobportal-backend.onrender.com/api/jobs/recruiter/${user._id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -63,7 +63,7 @@ export default function RecruiterDashboard() {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:5000/api/jobs/${jobId}`,
+        `https://smis-jobportal-backend.onrender.com/api/jobs/${jobId}`,
         {
           method: "DELETE",
           headers: {

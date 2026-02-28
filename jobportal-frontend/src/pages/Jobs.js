@@ -39,7 +39,7 @@ export default function Jobs() {
 
   // ✅ Fetch all jobs
   useEffect(() => {
-    fetch("http://localhost:5000/api/jobs")
+    fetch("https://smis-jobportal-backend.onrender.com/api/jobs")
       .then(res => res.json())
       .then(data => setJobs(data))
       .catch(err => console.error("Error fetching jobs:", err));
@@ -48,7 +48,7 @@ export default function Jobs() {
   // ✅ Fetch applied jobs
   useEffect(() => {
     if (user?._id) {
-      fetch(`http://localhost:5000/api/applications/user/${user._id}`)
+      fetch(`https://smis-jobportal-backend.onrender.com/api/applications/user/${user._id}`)
         .then(res => res.json())
         .then(data => {
           const jobIds = data.map(app => app.jobId._id || app.jobId);
@@ -72,7 +72,7 @@ export default function Jobs() {
 
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/api/applications/apply", {
+    const res = await fetch("https://smis-jobportal-backend.onrender.com/api/applications/apply", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

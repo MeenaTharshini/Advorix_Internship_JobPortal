@@ -5,13 +5,13 @@ export default function RecruiterApplications() {
   const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/applications/recruiter/${user._id}`)
+    fetch(`https://smis-jobportal-backend.onrender.com/api/applications/recruiter/${user._id}`)
       .then(res => res.json())
       .then(data => setApplications(data));
   }, []);
 
   const updateStatus = async (id, status) => {
-    await fetch(`http://localhost:5000/api/applications/status/${id}`, {
+    await fetch(`https://smis-jobportal-backend.onrender.com/api/applications/status/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status })

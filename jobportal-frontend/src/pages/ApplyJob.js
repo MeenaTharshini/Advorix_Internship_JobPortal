@@ -28,7 +28,7 @@ function ApplyJob() {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch("http://localhost:5000/api/applications/apply", {
+    const res = await fetch("https://smis-jobportal-backend.onrender.com/api/applications/apply", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
