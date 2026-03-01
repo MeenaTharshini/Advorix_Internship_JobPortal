@@ -3,6 +3,8 @@
 This repository contains projects completed as part of my  
 **Web Development (Full Stack) Internship at Advorix – February Batch 2026.**
 
+## Live link: https://smis-jobportal.onrender.com
+
 ## Intern Details
 - **Name:** Meena Tharshini I  
 - **Domain:** Web Development (Full Stack)
