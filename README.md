@@ -87,6 +87,7 @@ JobPortal
 │
 ├── jobportal-backend
 │   ├── controllers
+|   ├── build
 │   ├── middleware
 │   │   └── auth.js
 │   ├── models
@@ -101,9 +102,11 @@ JobPortal
 │   ├── package.json
 │   └── server.js
 │
-├── JOBPORTAL-FRONTEND
+├── jobportal-frontend
 │   ├── public
+|   ├── build
 │   ├── src
+|   |   ├── config.js
 │   │   ├── components
 │   │   ├── context
 │   │   │   └── AuthContext.js
